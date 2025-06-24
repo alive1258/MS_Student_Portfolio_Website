@@ -1,0 +1,15 @@
+export const services = [
+  "UI/UX Design",
+  "iOS & Android App Design",
+  "UX/UI Design",
+  "Branding & Graphic Design",
+  "Social Media Marketing",
+  "iOS & Android App Design",
+  "Digital Marketing",
+  "UI/UX Design",
+  "Content Creation & Copywriting",
+  "UX/UI Design",
+  "iOS & Android App Design",
+  "Social Media Marketing",
+  "UI/UX Design",
+];
