@@ -27,7 +27,7 @@ const Hero = () => {
           width: "699.729px",
           height: "626.07px",
           left: "152.271px",
-          bottom: "-377.762px",
+          bottom: "-477.762px",
         }}
       ></div>
 
