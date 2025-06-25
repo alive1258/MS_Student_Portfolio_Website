@@ -45,27 +45,16 @@ const Footer = () => {
       {/* <!-- START FOOTER SECTION   --> */}
       <div className="bg-[#101828]">
         {/* <div className="bg-[#18181B]"> */}
-        <div className="container py-14 grid md:grid-cols-12 grid-cols-1 gap-6 text-white w-full">
-          <div className=" md:col-span-5 ">
+        <div className="container py-14 grid md:grid-cols-4 grid-cols-1 gap-6 text-white w-full">
+          <div className="md:col-span-2">
             {/* <!-- START FOOTER LOGO DESIGN AREA --> */}
             <div className="flex items-center space-x-4">
-              <Image
-                src="/images/footer/footerLogo.png"
-                alt="logo"
-                width={26}
-                height={40}
-              />
-              <Image
-                src="/images/footer/webFooter.png"
-                alt="logo"
-                width={92}
-                height={40}
-              />
+              <h1 className="text-2xl font-semibold">Abu Sayem</h1>
             </div>
             {/* <!-- / END FOOTER LOGO DESIGN AREA --> */}
 
             <div className="mt-10">
-              <p className="text-[#FAFAFA]  text-[16px] w-full max-w-[410px]">
+              <p className="text-[#FAFAFA]  text-[16px] w-full md:max-w-[600px]">
                 Solvex is a digital agency dedicated to creating innovative,
                 user-centered designs for startups and businesses. We turn your
                 vision into reality with engaging, responsive, and modern
@@ -100,30 +89,14 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* <!-- START FOOTER SPECIAL LINK AREA --> */}
-          <div className=" md:col-span-2  md:mt-0 mt-8">
-            <FooterLinkSection
-              title="Special links"
-              links={[
-                "Case Studies",
-                "Client Testimonials",
-                "Blogs",
-                "Careers",
-                "Privacy Policy",
-                "Terms & Conditions",
-              ]}
-            />
-          </div>
-          {/* <!-- / END FOOTER SPECIAL LINK AREA --> */}
-
           {/* <!-- START FOOTER QUICK LINK AREA --> */}
-          <div className=" md:col-span-2 md:mt-0 mt-8">
+          <div className=" md:mt-0 mt-8">
             <FooterQuickLink />
           </div>
           {/* <!-- / END FOOTER QUICK LINK AREA --> */}
 
           {/* <!-- START FOOTER SERVICE AREA --> */}
-          <div className=" md:col-span-3 md:mt-0 mt-10">
+          <div className="  md:mt-0 mt-10">
             <h2 className="text-[#FAFAFA] font-satoshi font-bold text-lg w-fit border-b pb-1 uppercase border-[#3B82F6]">
               Subscribe newsletter
             </h2>
@@ -135,18 +108,21 @@ const Footer = () => {
                   placeholder="Email address"
                   className="bg-transparent text-[#A1A1AA] text-[16px]  placeholder-[#A1A1AA] outline-none "
                 />
-                <button className="bg-[#3B82F6] px-4 py-2 rounded-lg uppercase text-[#FFF] ">
+                <button className="bg-[#6FC] px-4 py-2 rounded-lg uppercase text-[#000] ">
                   Sign Up
                 </button>
               </div>
+              <p className="text-[#fff]">
+                🏆 IEEE Award – 2023 | 📜 10+ Published Papers
+              </p>
             </div>
 
             <div className="mt-10">
-              <h4 className="text-[#FAFAFA] md:text-start text-center uppercase font-satoshi font-bold text-[16px]">
-                we are available{" "}
+              <h4 className="text-[#FAFAFA] md:text-start text-center  font-bold text-xl">
+                Say Hello,
               </h4>
-              <p className="mt-1 text-[#D4D4D8] md:text-start text-center  text-sm">
-                Mon-sat - 9.00 am to 7.00 pm{" "}
+              <p className="mt-1 text-[#D4D4D8] md:text-start text-center  text-[16px]">
+                abusayme@gmail.com
               </p>
             </div>
           </div>

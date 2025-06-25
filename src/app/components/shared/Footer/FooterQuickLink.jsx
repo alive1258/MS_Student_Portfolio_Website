@@ -6,9 +6,9 @@ import { footerLinks } from "@/utils/fakeData/footerLinks";
 const FooterQuickLink = () => {
   return (
     <section>
-      <div className="md:col-span-1 mt-10 md:mt-0">
+      <div className=" mt-10 md:mt-0">
         {/* ========== SECTION TITLE START ========== */}
-        <h2 className="text-[#FAFAFA] font-satoshi font-bold text-lg border-b border-[#3B82F6] pb-1 uppercase w-3/4">
+        <h2 className="text-[#FAFAFA] font-bold text-lg border-b border-[#3B82F6] pb-1 uppercase w-fit">
           Quick Links
         </h2>
         {/* ========== SECTION TITLE END ========== */}

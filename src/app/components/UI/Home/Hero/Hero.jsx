@@ -1,4 +1,5 @@
 import SlideLeft from "@/app/components/common/animations/SlideLeft";
+import SlideUp from "@/app/components/common/animations/SlideUp";
 import ZoomIn from "@/app/components/common/animations/ZoomIn";
 import Button from "@/app/components/common/Button/Button";
 import ButtonOutline from "@/app/components/common/Button/ButtonOutline";
@@ -56,15 +57,19 @@ const Hero = () => {
               </SlideLeft>
             </div>
 
-            <div className="md:mt-10 mt-6 flex items-center gap-6">
-              <Button content="View Our Work" />
-              <ButtonOutline content="Download Cv" />
-            </div>
+            <SlideUp className="md:mt-10 md:space-y-0 space-y-4 mt-6 md:flex items-center gap-6">
+              <div>
+                <Button content="View Our Work" />
+              </div>
+              <div>
+                <ButtonOutline content="Download Cv" />
+              </div>
+            </SlideUp>
           </div>
         </div>
 
         <ZoomIn>
-          <div className=" rounded-2xl ">
+          <div className="">
             <div className="z-20 p-1.5 relative overflow-hidden rounded-2xl cursor-pointer">
               <Image
                 src="/assets/images/sayem_image.png"

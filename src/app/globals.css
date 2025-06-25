@@ -54,4 +54,17 @@
   .add_section_title {
     @apply border-b text-lg text-[#b5b7c8] pb-5 border-[#26272F];
   }
+  /* footer social icon  */
+  .footer-social-icon {
+    @apply hover:text-[#000] size-12 duration-300 transition-all ease-in-out cursor-pointer hover:bg-[#6FC] hover:border-[#6FC] rounded-full flex justify-center items-center  bg-[#27272A] border border-[#3F3F46];
+  }
+}
+
+/* About Us Section Background */
+.about-us-section-bg {
+  background-image: url("/assets/images/aboutBG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
 }

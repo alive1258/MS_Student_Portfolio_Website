@@ -1,30 +1,53 @@
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { HiMiniXMark, HiOutlineBars3BottomLeft } from "react-icons/hi2";
 import Button from "../../common/Button/Button";
-
+import { RiArrowUpLine } from "@remixicon/react";
+import { BsLinkedin } from "react-icons/bs";
 // import itcmLogo from "../../../../public/assets/images/logoITCM.jpg";
 
 const Navbar = () => {
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState("");
+  const [scrollPercent, setScrollPercent] = useState(0);
 
-  const topFunction = () => {
-    setOpen(!open);
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+  const closeSidebar = () => setOpen(false);
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const handleMenuLinkClick = () => {
+    setOpenModal("");
+    closeSidebar();
+    scrollToTop();
   };
+  const hamburgerMenu = () => {
+    setOpen(!open);
+  };
+  const toggleSidebar = () => setOpen((prev) => !prev);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scroll = Math.min((scrollTop / docHeight) * 100, 100);
+      setScrollPercent(Math.round(scroll));
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const items = [
     { display: "Home", path: "/" },
     { display: "About", path: "/about" },
-    { display: "Research & Publications", path: "/research-publications" },
-    { display: "Products", path: "/products" },
+    { display: "Research & Publications", path: "/research-and-publications" },
+    { display: "Projects", path: "/projects" },
     { display: "Experience", path: "/experience" },
-    { display: "ECA", path: "/eca" },
+    { display: "ECA", path: "/extra-curriculum" },
     { display: "Articles", path: "/articles" },
   ];
 
@@ -42,7 +65,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className="lg:hidden flex items-center z-50">
-          <button onClick={topFunction}>
+          <button onClick={toggleSidebar}>
             {!open ? (
               <HiOutlineBars3BottomLeft className="w-8 h-8 text-gray-900" />
             ) : (
@@ -55,14 +78,14 @@ const Navbar = () => {
         <ul
           className={`flex space-x-6 flex-col md:flex-row items-center md:gap-5 gap-4 absolute md:static left-0 top-0 w-full md:w-auto transition-transform duration-500 ease-in-out ${
             open
-              ? "translate-x-0 top-28 "
-              : "-translate-x-full md:translate-x-0 top-28"
+              ? "translate-x-0 top-20 pt-10 bg-white md:bg-transparent h-screen "
+              : "-translate-x-full md:translate-x-0 md:top-0 md:pt-0 md:h-0 top-20 pt-10 h-screen bg-white md:bg-transparent "
           }`}
         >
           {items.map(({ display, path }) => (
             <Link
               key={path}
-              onClick={() => setOpen(false)}
+              onClick={handleMenuLinkClick}
               className={`text-[16px] font-normal hover:text-[#3F51B5] duration-300 ${
                 pathName === path
                   ? "font-semibold text-[#3F51B5]"
@@ -74,8 +97,104 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <Button content="Lets Talk" />
+          <Link onClick={handleMenuLinkClick} href="/contact">
+            <Button content="Lets Talk" />
+          </Link>
         </ul>
+      </div>
+
+      {/* soacil icon ?  */}
+      {/* Social icons */}
+      <div className="hidden  lg:flex fixed flex-col top-[35%] left-0">
+        <ul>
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#0077b5]">
+            <a
+              target="_new"
+              className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
+              href="https://www.linkedin.com/in/zamirul-kabir-575a41279/"
+            >
+              Linkedin <BsLinkedin size={30} />
+            </a>
+          </li>
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
+            <a
+              target="_new"
+              className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
+              href="https://github.com/alive1258"
+            >
+              Github
+            </a>
+          </li>
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#1877F2]">
+            <a
+              target="_new"
+              className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
+              href="https://www.facebook.com/profile.php?id=100060866764137"
+            >
+              Facebook
+            </a>
+          </li>
+          {/* bg-[#565f69] */}
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#E1306c] ">
+            <a
+              target="_new"
+              className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
+              href="https://www.instagram.com/zamirul463/"
+            >
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+      {/* scroll Percent section    */}
+      <div className="hidden lg:flex fixed flex-col right-0  mr-4 bottom-4">
+        <div className="space-y-4 relative">
+          <div
+            className={`absolute right-0 mr-4 bottom-0 transition-opacity duration-500 ${
+              scrollPercent === 100
+                ? "opacity-0 pointer-events-none"
+                : "opacity-100"
+            }`}
+          >
+            <div
+              className="group relative size-14 rounded-full flex justify-center items-center border-2 border-gray-100 bg-white"
+              style={{
+                background: `conic-gradient(#1A2A6C ${
+                  scrollPercent * 3.6
+                }deg, #E4E4E7 ${scrollPercent * 3.6}deg)`,
+              }}
+            >
+              {/* Inner Circle with Percentage */}
+              <div className="size-11 bg-white rounded-full flex items-center justify-center text-sm  text-[#1A2A6C]">
+                {scrollPercent}%
+              </div>
+
+              {/* Scroll to top button (only visible on hover) */}
+              <button
+                aria-label="Scroll to top"
+                onClick={scrollToTop}
+                className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full hover:bg-[#1A2A6C] hover:border-[#1A2A6C] cursor-pointer"
+              >
+                <RiArrowUpLine className="text-white" size={28} />
+              </button>
+            </div>
+          </div>
+
+          {/* Scroll to top button */}
+          <div
+            onClick={scrollToTop}
+            className={`absolute right-0  mr-4 bottom-4 bg-white size-14 ml-2 border-4 transition-all duration-500 ease-in-out group cursor-pointer hover:bg-[#1A2A6C] hover:border-[#1A2A6C] rounded-full flex justify-center items-center border-[#1A2A6C] ${
+              scrollPercent === 100
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
+            }`}
+          >
+            <RiArrowUpLine
+              className="text-[#1A2A6C] group-hover:text-white"
+              size={28}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

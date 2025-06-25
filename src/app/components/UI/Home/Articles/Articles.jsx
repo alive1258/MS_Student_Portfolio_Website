@@ -1,15 +1,13 @@
-"use client";
 import SlideUp from "@/app/components/common/animations/SlideUp";
 import Button from "@/app/components/common/Button/Button";
 import ButtonOutline from "@/app/components/common/Button/ButtonOutline";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
 
-const Project = () => {
+const Articles = () => {
   return (
-    <div className="bg-[#F5F7FA] md:mt-32 mt-20">
-      <div className="container py-24">
+    <div className=" md:my-32 my-20">
+      <div className="container ">
         <SlideUp className="flex items-center justify-center space-x-4">
           <div
             className="mt-1"
@@ -21,7 +19,7 @@ const Project = () => {
             }}
           ></div>
           <h2 className="text-primary-base text-2xl font-bold">
-            Featured Projects
+            Insights & Articles
           </h2>
           <div
             className="mt-1"
@@ -35,15 +33,13 @@ const Project = () => {
         </SlideUp>
         <SlideUp>
           <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
-            I’m a PhD researcher and teaching assistant passionate about using
-            cutting-edge technologies to solve real-world mechanical problems. I
-            believe in bridging theory and practice through research,
-            simulation, and education.
+            Sharing thoughts, research experiences, and lessons learned <br />{" "}
+            in the world of power electronics and renewable energy.
           </p>
         </SlideUp>
 
-        <div className="mt-9 grid md:grid-cols-3 grid-cols-1 gap-6">
-          <div className="group cursor-pointer bg-[#fff] p-4 rounded-2xl flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-xl">
+        <div className="mt-16 grid md:grid-cols-3 grid-cols-1 gap-6">
+          <div className="group border border-[#E0E0E0] cursor-pointer bg-[#fff] p-4 rounded-2xl flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-xl">
             {/* START BLOG IMAGE */}
             <div className="relative overflow-hidden rounded-2xl">
               <Image
@@ -55,16 +51,6 @@ const Project = () => {
               />
             </div>
             {/* END BLOG IMAGE */}
-
-            {/* START BLOG CATEGORY BADGE */}
-            <div className="md:mt-6 mt-4 flex justify-between items-center">
-              <div
-                className={`rounded-[99px] w-fit px-3 py-1.5 border text-sm `}
-              >
-                blogcategory
-              </div>
-            </div>
-            {/* END BLOG CATEGORY BADGE */}
 
             {/* START BLOG TITLE AND EXCERPT */}
             <div className="md:mt-6 mt-4">
@@ -78,6 +64,16 @@ const Project = () => {
                 adipisicing elit. Esse, nostrum!
               </p>
             </div>
+            {/* START BLOG CATEGORY BADGE */}
+            <div className="md:mt-6 mt-4 flex justify-between items-center">
+              <h3
+                className={`rounded-[99px] w-fit px-3 py-1.5 border text-sm `}
+              >
+                blogcategory
+              </h3>
+              <p>April 30, 2025</p>
+            </div>
+            {/* END BLOG CATEGORY BADGE */}
             {/* END BLOG TITLE AND EXCERPT */}
 
             {/* START BLOG AUTHOR AND READING TIME */}
@@ -91,11 +87,11 @@ const Project = () => {
         </div>
 
         <div className="mt-10 flex items-center justify-center">
-          <ButtonOutline content="View All Projects" />
+          <ButtonOutline content="View All Articles" />
         </div>
       </div>
     </div>
   );
 };
 
-export default Project;
+export default Articles;

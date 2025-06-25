@@ -12,12 +12,12 @@ const DigitalFuture = () => {
   const buttonDelay = 0.6;
 
   return (
-    <div className="bg-[#EFF6FF] md:mt-32 mt-20 relative overflow-hidden w-full">
+    <div className=" md:mt-32 mt-20 relative overflow-hidden w-full">
       {/* GRADIENT LINE DECORATION */}
 
       {/* =======================START MAIN CONTENT AREA ======================= */}
 
-      <div className="py-12 container mx-auto">
+      <div className="pb-32 container mx-auto">
         {/* CTA CARD */}
         <div
           className="md:p-8 px-6 overflow-hidden bg-[#1A2A6C] text-white relative"
