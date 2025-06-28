@@ -37,19 +37,25 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourdomain.com", // Replace with Abu Sayem’s actual domain
+    url: "https://mdabusayem.com", // Replace with Abu Sayem’s actual domain
     siteName: "Abu Sayem",
     title: "Abu Sayem | Power Electronics Researcher & MS Student",
     description:
       "Explore the academic and research portfolio of Abu Sayem — focused on power converter design, renewable energy systems, and electrical reliability.",
     images: [
       {
-        url: "https://i.ibb.co/w7HRw2Q/logo.webp", // Update to a 1200x630 OpenGraph preview image
+        url: "https://i.ibb.co/8VbVZmn/Sayem-Image.png", // Update to a 1200x630 OpenGraph preview image
         width: 1200,
         height: 630,
         alt: "Abu Sayem Portfolio Preview",
       },
     ],
+    profile: {
+      firstName: "Abu",
+      lastName: "Sayem",
+      username: "abu-sayem", // Optional LinkedIn username
+      gender: "male",
+    },
   },
   twitter: {
     card: "summary_large_image",
@@ -58,6 +64,10 @@ export const metadata = {
     description:
       "Researcher focused on power converter design, reliability, and renewable energy systems. Visit to explore academic works and publications.",
     images: ["https://i.ibb.co/w7HRw2Q/logo.webp"], // Match with OpenGraph image
+  },
+  // Custom field for social profiles (not standard metadata, just for your use)
+  socialProfiles: {
+    linkedin: "https://www.linkedin.com/in/md-sayem-8a53b2208/", // Add actual LinkedIn URL here
   },
 };
 

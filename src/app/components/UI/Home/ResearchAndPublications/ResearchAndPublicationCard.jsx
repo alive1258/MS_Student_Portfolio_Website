@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { RiArrowRightLine } from "@remixicon/react";
 import SlideUp from "@/app/components/common/animations/SlideUp";
 import Button from "@/app/components/common/Button/Button";
 
@@ -14,8 +13,12 @@ const ResearchAndPublicationCard = ({ item, idx, delay = 0 }) => {
           <div className="relative overflow-hidden rounded-2xl">
             <Image
               className="w-full max-h-[410px] h-fit  object-cover rounded-2xl hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-              src={item?.image}
-              alt={item?.company}
+              src={
+                process?.env?.NEXT_PUBLIC_IMAGE_URL +
+                item?.thumbnail +
+                `?v=${new Date().getTime()}`
+              }
+              alt={item?.title}
               height={384}
               width={500}
             />
@@ -33,7 +36,7 @@ const ResearchAndPublicationCard = ({ item, idx, delay = 0 }) => {
             {/* Project Title */}
             <h1 className="md:text-[32px] text-[20px] font-satoshi font-bold">
               <Link
-                href={`/portfolio/${item.id}`}
+                href={item?.paper_link}
                 className="text-primary-base hover:text-blue-base"
               >
                 {item?.title}
@@ -135,7 +138,7 @@ const ResearchAndPublicationCard = ({ item, idx, delay = 0 }) => {
           {/* View Live Project Link */}
           {/* View Live Project Link */}
           <div className="md:mt-9 mt-5 w-fit md:mx-0 mx-auto ">
-            <Link href={`/portfolio/${item.id}`}>
+            <Link href={item?.paper_link}>
               <Button content="View Details" />
             </Link>
           </div>

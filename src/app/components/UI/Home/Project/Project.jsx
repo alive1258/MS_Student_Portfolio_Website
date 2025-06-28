@@ -1,101 +1,81 @@
-"use client";
 import SlideUp from "@/app/components/common/animations/SlideUp";
-import Button from "@/app/components/common/Button/Button";
 import ButtonOutline from "@/app/components/common/Button/ButtonOutline";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
+import ProjectCard from "./ProjectCard";
 
-const Project = () => {
-  return (
-    <div className="bg-[#F5F7FA] md:mt-32 mt-20">
-      <div className="container py-24">
-        <SlideUp className="flex items-center justify-center space-x-4">
-          <div
-            className="mt-1"
-            style={{
-              width: "64px",
-              height: "24px",
-              background:
-                "linear-gradient(270deg, #3F51B5 5.38%, rgba(255, 255, 255, 0.00) 100%)",
-            }}
-          ></div>
-          <h2 className="text-primary-base text-2xl font-bold">
-            Featured Projects
-          </h2>
-          <div
-            className="mt-1"
-            style={{
-              width: "64px",
-              height: "24px",
-              background:
-                "linear-gradient(90deg, #3F51B5 5.38%, rgba(255, 255, 255, 0.00) 100%)",
-            }}
-          ></div>
-        </SlideUp>
-        <SlideUp>
-          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
-            I’m a PhD researcher and teaching assistant passionate about using
-            cutting-edge technologies to solve real-world mechanical problems. I
-            believe in bridging theory and practice through research,
-            simulation, and education.
-          </p>
-        </SlideUp>
+const Project = async () => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`, {
+      next: { revalidate: 30 },
+    });
 
-        <div className="mt-9 grid md:grid-cols-3 grid-cols-1 gap-6">
-          <div className="group cursor-pointer bg-[#fff] p-4 rounded-2xl flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-xl">
-            {/* START BLOG IMAGE */}
-            <div className="relative overflow-hidden rounded-2xl">
-              <Image
-                className="w-full h-[245px] rounded-2xl shadow-lg hover:scale-110 duration-500 transition-transform ease-[cubic-bezier(0.4,0,0.2,1)] object-cover"
-                src="/assets/images/p1.png"
-                alt={`blogtitle`}
-                height={245}
-                width={392}
-              />
-            </div>
-            {/* END BLOG IMAGE */}
+    if (!res.ok) {
+      throw new Error("Failed to fetch hero data");
+    }
 
-            {/* START BLOG CATEGORY BADGE */}
-            <div className="md:mt-6 mt-4 flex justify-between items-center">
-              <div
-                className={`rounded-[99px] w-fit px-3 py-1.5 border text-sm `}
-              >
-                blogcategory
+    const datas = await res.json();
+    const projectsItem = datas?.data?.data;
+    // console.log(projectsItem, "projectsItem");
+    return (
+      <div className="bg-[#F5F7FA] md:mt-32 mt-20">
+        <div className="container py-24">
+          <SlideUp className="flex items-center justify-center space-x-4">
+            <div
+              className="mt-1"
+              style={{
+                width: "64px",
+                height: "24px",
+                background:
+                  "linear-gradient(270deg, #3F51B5 5.38%, rgba(255, 255, 255, 0.00) 100%)",
+              }}
+            ></div>
+            <h2 className="text-primary-base text-2xl font-bold">
+              Featured Projects
+            </h2>
+            <div
+              className="mt-1"
+              style={{
+                width: "64px",
+                height: "24px",
+                background:
+                  "linear-gradient(90deg, #3F51B5 5.38%, rgba(255, 255, 255, 0.00) 100%)",
+              }}
+            ></div>
+          </SlideUp>
+          <SlideUp>
+            <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
+              I’m a PhD researcher and teaching assistant passionate about using
+              cutting-edge technologies to solve real-world mechanical problems.
+              I believe in bridging theory and practice through research,
+              simulation, and education.
+            </p>
+          </SlideUp>
+
+          <div className="mt-9 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+            {projectsItem.length > 0 ? (
+              projectsItem?.map((item, index) => (
+                <ProjectCard key={index} item={item} />
+              ))
+            ) : (
+              <div className="col-span-2 text-center text-gray-500 text-xl py-20">
+                Coming Soon — project content will be available shortly.
               </div>
-            </div>
-            {/* END BLOG CATEGORY BADGE */}
+            )}
+          </div>
 
-            {/* START BLOG TITLE AND EXCERPT */}
-            <div className="md:mt-6 mt-4">
-              <Link href="/">
-                <h2 className="text-primary-base group-hover:text-[#3B82F6] font-satoshi font-bold md:text-2xl text-[20px] capitalize">
-                  blog title START BLOG TITLE AND EXCERPT
-                </h2>
-              </Link>
-              <p className="md:mt-6 mt-4 text-[#464646] text-[16px] ">
-                blog?.excerpt Lorem ipsum dolor sit, amet consectetur
-                adipisicing elit. Esse, nostrum!
-              </p>
-            </div>
-            {/* END BLOG TITLE AND EXCERPT */}
-
-            {/* START BLOG AUTHOR AND READING TIME */}
-            <div className="mt-auto md:pt-6 pt-4">
-              <div className="flex items-center justify-center">
-                <Button content="View Details" />
-              </div>
-            </div>
-            {/* START BLOG AUTHOR AND READING TIME */}
+          <div className="mt-10 flex items-center justify-center">
+            <ButtonOutline content="View All Projects" />
           </div>
         </div>
-
-        <div className="mt-10 flex items-center justify-center">
-          <ButtonOutline content="View All Projects" />
-        </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error("Hero section fetch failed:", error);
+    return (
+      <div className="md:pt-36 pt-28 text-center text-red-500 text-lg py-20">
+        Oops! Something went wrong while loading the hero section.
+      </div>
+    );
+  }
 };
 
 export default Project;

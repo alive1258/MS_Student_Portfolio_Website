@@ -1,89 +1,65 @@
-import SlideLeft from "@/app/components/common/animations/SlideLeft";
-import SlideUp from "@/app/components/common/animations/SlideUp";
-import ZoomIn from "@/app/components/common/animations/ZoomIn";
-import Button from "@/app/components/common/Button/Button";
-import ButtonOutline from "@/app/components/common/Button/ButtonOutline";
-import Image from "next/image";
-import { AiOutlineDownload } from "react-icons/ai";
+import HeroCard from "./HeroCard";
 
-const Hero = () => {
-  return (
-    <div className="md:pt-36 pt-28 relative h-full w-full  overflow-hidden">
-      <div className="absolute md:block hidden blurred-blue-circle"></div>
-      <div
-        className="absolute rounded-full opacity-40 blur-[150px] bg-[#E9C12F]"
-        // 952fe9
-        style={{
-          width: "593.727px",
-          height: "531.226px",
-          right: "-72.727px",
-          top: "-345.17px",
-        }}
-      ></div>
+const Hero = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/home-hero-section`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
 
-      {/* Blurred Effect - Blue Circle */}
-      <div
-        className="absolute rounded-full opacity-[0.38] blur-[125px] bg-[#5158DA] pointer-events-none"
-        style={{
-          width: "699.729px",
-          height: "626.07px",
-          left: "152.271px",
-          bottom: "-477.762px",
-        }}
-      ></div>
+    if (!res.ok) {
+      throw new Error("Failed to fetch hero data");
+    }
 
-      {/* Blurred Effect - Yellow Circle */}
-      <div className="grid md:grid-cols-2 grid-cols-1 container md:gap-20 gap-10  ">
-        {/* left section  */}
-        <div className="flex justify-center items-center">
-          <div className="md:mt-6 ">
-            <p>Hi 👋, I'm Abu Sayem — </p>
+    const datas = await res.json();
+    const heroItem = datas?.data?.data?.[0];
 
-            <h2 className="md:text-4xl text-primary-base text-2xl font-bold pt-4">
-              MS Student &
-            </h2>
-            <div className="pt-8 text-lg">
-              <SlideLeft delay={0.4}>
-                <h2 className="text-[#3479FD] md:text-4xl text-2xl font-bold">
-                  Power Electronics Researcher
-                </h2>
-                <p className="text-secondary-base md:text-lg text-base mt-8">
-                  with over 2 years of hands-on experience, I specialize in
-                  building modern, responsive, and scalable web applications.
-                  With a strong foundation in both front-end and back-end
-                  technologies, I bring a balanced approach to design and
-                  functionality.
-                </p>
-              </SlideLeft>
+    return (
+      <div className="md:pt-36 pt-28 relative h-full w-full overflow-hidden">
+        {/* Blurred Background Circles */}
+        <div className="absolute md:block hidden blurred-blue-circle"></div>
+        <div
+          className="absolute rounded-full opacity-40 blur-[150px] bg-[#E9C12F]"
+          style={{
+            width: "593.727px",
+            height: "531.226px",
+            right: "-72.727px",
+            top: "-345.17px",
+          }}
+        />
+        <div
+          className="absolute rounded-full opacity-[0.38] blur-[125px] bg-[#5158DA] pointer-events-none"
+          style={{
+            width: "699.729px",
+            height: "626.07px",
+            left: "152.271px",
+            bottom: "-477.762px",
+          }}
+        />
+
+        {/* Hero Section Content */}
+        <div className="grid md:grid-cols-2 grid-cols-1 container md:gap-20 gap-10">
+          {heroItem ? (
+            <HeroCard item={heroItem} />
+          ) : (
+            // Placeholder UI when no data
+            <div className="col-span-2 text-center text-gray-500 text-xl py-20">
+              Coming Soon — Hero section content will be available shortly.
             </div>
-
-            <SlideUp className="md:mt-10 md:space-y-0 space-y-4 mt-6 md:flex items-center gap-6">
-              <div>
-                <Button content="View Our Work" />
-              </div>
-              <div>
-                <ButtonOutline content="Download Cv" />
-              </div>
-            </SlideUp>
-          </div>
+          )}
         </div>
-
-        <ZoomIn>
-          <div className="">
-            <div className="z-20 p-1.5 relative overflow-hidden rounded-2xl cursor-pointer">
-              <Image
-                src="/assets/images/sayem_image.png"
-                alt="zamirulPic"
-                width={400}
-                height={700}
-                className="w-full  object-cover rounded-2xl hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-              />
-            </div>
-          </div>
-        </ZoomIn>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error("Hero section fetch failed:", error);
+    return (
+      <div className="md:pt-36 pt-28 text-center text-red-500 text-lg py-20">
+        Oops! Something went wrong while loading the hero section.
+      </div>
+    );
+  }
 };
 
 export default Hero;
