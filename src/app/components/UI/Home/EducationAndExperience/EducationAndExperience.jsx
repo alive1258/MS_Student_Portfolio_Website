@@ -43,7 +43,7 @@ const EducationAndExperience = async () => {
                 "linear-gradient(270deg, #3F51B5 5.38%, rgba(255, 255, 255, 0.00) 100%)",
             }}
           ></div>
-          <h2 className="text-primary-base text-center text-2xl font-bold">
+          <h2 className="text-primary-base text-center text-2xl  font-bold">
             My Education & Experiences{" "}
           </h2>
           <div

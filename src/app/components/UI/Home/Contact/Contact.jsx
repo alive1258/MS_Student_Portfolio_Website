@@ -11,7 +11,9 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <div className="bg-[#101828]">
+    <div className="bg-[#101828] overflow-hidden relative">
+      <div className="absolute md:block hidden bottom-gradient-line"></div>
+      <div className="absolute md:block hidden custom-gradient-line"></div>
       <div className="container py-24">
         <SlideUp className="flex items-center justify-center space-x-4">
           <div
@@ -35,7 +37,7 @@ const Contact = () => {
           ></div>
         </SlideUp>
         <SlideUp>
-          <p className="mt-10 text-[#fff] text-center font-semibold md:text-3xl text-2xl">
+          <p className="mt-10 text-[#fff] text-center font-semibold md:text-3xl text-xl">
             Lorem ipsum dolor sit amet consectetur. Mattis venenatis fermentum
             ac dolor dui a in auctor nunc. Commodo amet non vehicula euismod
             nisl neque. Ac fringilla egestas congue fusce massa.

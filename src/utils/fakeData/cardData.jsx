@@ -30,11 +30,10 @@ export const cardData = [
   },
   {
     id: 5,
-    color: "#A855F7",
-    bgColor: "linear-gradient(90deg, #0EA5E5 0%, #38BDF9 100%)",
-    gradient: "from-transparent via-sky-500 to-transparent",
-
-    borderColor: "#A855F7",
+    color: "#10B981",
+    bgColor: "linear-gradient(90deg, #10B981 0%, #6EE7B7 100%)",
+    gradient: "from-transparent via-emerald-500 to-transparent",
+    borderColor: "#10B981",
   },
   {
     id: 6,
@@ -46,17 +45,17 @@ export const cardData = [
   },
   {
     id: 7,
+    color: "#A855F7",
+    bgColor: "linear-gradient(90deg, #0EA5E5 0%, #38BDF9 100%)",
+    gradient: "from-transparent via-sky-500 to-transparent",
+    borderColor: "#A855F7",
+  },
+  {
+    id: 8,
     color: "#EC4899",
     bgColor: "linear-gradient(90deg, #EC4899 0%, #F9A8D4 100%)",
     gradient: "from-transparent via-pink-500 to-transparent",
     borderColor: "#EC4899",
-  },
-  {
-    id: 8,
-    color: "#F97316",
-    bgColor: "linear-gradient(90deg, #10B981 0%, #6EE7B7 100%)",
-    gradient: "from-transparent via-emerald-500 to-transparent",
-    borderColor: "#10B981",
   },
   {
     id: 9,

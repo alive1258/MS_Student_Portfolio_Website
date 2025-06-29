@@ -34,7 +34,16 @@ const HeroCard = ({ item }) => {
               <Button content="View Our Work" />
             </div>
             <div>
-              <ButtonOutline content="Download Cv" />
+              {item?.cv_link && (
+                <a
+                  href={item?.cv_link}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ButtonOutline content="Download CV" />
+                </a>
+              )}
             </div>
           </SlideUp>
         </div>

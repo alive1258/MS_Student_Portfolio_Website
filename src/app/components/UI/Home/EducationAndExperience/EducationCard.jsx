@@ -5,10 +5,10 @@ const EducationCard = ({ item }) => {
   return (
     <SlideLeft delay={0.2}>
       <div className="mt-8">
-        <div className="group border-b border-gray-200 pb-8 cursor-pointer bg-white hover:bg-[#F5F7FA] transition-all ease-in-out duration-300 rounded-xl p-6">
-          <div className="flex space-x-6 items-start">
+        <div className="group border-b border-gray-200 pb-8 cursor-pointer bg-white hover:bg-[#F5F7FA] transition-all ease-in-out duration-300 rounded-xl md:p-6">
+          <div className="flex md:space-x-6 space-x-3 items-start">
             {/* Icon */}
-            <div className="bg-[#95DCBC] p-4 rounded-full w-fit">
+            <div className="bg-[#95DCBC] md:p-4 p-2 rounded-full w-fit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -31,7 +31,7 @@ const EducationCard = ({ item }) => {
               <h1 className="text-[#3D3D3D] md:text-2xl text-xl font-semibold">
                 {item?.faculty_name}
               </h1>
-              <div className="mt-3 text-[18px] text-info-muted flex space-x-6">
+              <div className="mt-3 text-[18px] text-info-muted flex md:space-x-6 space-x-2">
                 <p>{item?.institute_name}</p>
                 <p>{item?.session}</p>
               </div>

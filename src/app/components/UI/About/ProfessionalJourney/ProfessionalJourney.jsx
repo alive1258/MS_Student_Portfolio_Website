@@ -14,7 +14,7 @@ const ProfessionalJourney = async () => {
     const datas = await res.json();
     const aboutMeItem = datas?.data?.data?.[0];
     return (
-      <div className="relative mt-20 overflow-hidden">
+      <div className="relative overflow-hidden">
         {/* Glowing Blurred top Circle */}
         <div
           className="absolute -left-[162px] -top-[262px] w-[400px] h-[400px] rounded-full"

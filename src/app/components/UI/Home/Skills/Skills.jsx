@@ -47,12 +47,15 @@ const Skills = async () => {
             title: skill.skill_title,
             percentage: Number(skill.skill_amount) || 0,
             bgColor: matchedCard?.bgColor, // ✅ pass class string like "from-transparent via-yellow-500 to-transparent"
+            color: matchedCard?.color, // ✅ pass class string like "from-transparent via-yellow-500 to-transparent"
           })),
       };
     });
 
     return (
-      <div className="bg-[#101828] md:mt-32 mt-20 ">
+      <div className="bg-[#101828] overflow-hidden relative md:mt-32 mt-20 ">
+        <div className="absolute md:block hidden bottom-gradient-line"></div>
+        <div className="absolute md:block hidden custom-gradient-line"></div>
         <div className="container py-24 relative overflow-hidden">
           <SlideUp className="flex items-center justify-center space-x-4">
             <div
@@ -78,7 +81,7 @@ const Skills = async () => {
             ></div>
           </SlideUp>
           <SlideUp>
-            <p className="mt-10 text-[#fff] text-center font-semibold md:text-3xl text-2xl">
+            <p className="mt-10 text-[#fff] text-center font-semibold md:text-3xl text-xl">
               A snapshot of my core strengths in power electronics, simulations,{" "}
               <br />
               research, and technical problem-solving.

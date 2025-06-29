@@ -25,7 +25,7 @@ const WhyCollaborate = async () => {
       <div className="bg-[#18181B]">
         <div className="container py-20">
           <SlideUp>
-            <h1 className="md:text-[40px] text-[34px] font-satoshi font-bold text-[#FFF] text-center mx-auto">
+            <h1 className="md:text-[40px] text-[24px] font-bold text-[#FFF] text-center mx-auto">
               Why Collaborate with Sayem on <br /> Power Electronics Research
             </h1>
           </SlideUp>

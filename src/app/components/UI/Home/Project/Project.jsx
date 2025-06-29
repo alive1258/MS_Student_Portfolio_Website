@@ -16,7 +16,9 @@ const Project = async () => {
     const projectsItem = datas?.data?.data;
 
     return (
-      <div className="bg-[#F5F7FA] ">
+      <div className="bg-[#F5F7FA] relative overflow-hidden">
+        <div className="absolute md:block hidden bottom-gradient-line"></div>
+        <div className="absolute md:block hidden custom-gradient-line"></div>
         <div className="container py-24">
           <SlideUp className="flex items-center justify-center space-x-4">
             <div
@@ -42,7 +44,7 @@ const Project = async () => {
             ></div>
           </SlideUp>
           <SlideUp>
-            <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
+            <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
               I’m a PhD researcher and teaching assistant passionate about using
               cutting-edge technologies to solve real-world mechanical problems.
               I believe in bridging theory and practice through research,

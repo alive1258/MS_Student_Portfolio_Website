@@ -8,7 +8,7 @@ const ProjectDetails = ({ singleData }) => {
 
   return (
     <div className="container my-12">
-      <div className="bg-[#F5F7FA] border border-[#E0E0E0]  rounded-xl p-6">
+      <div className="bg-[#F5F7FA] border border-[#E0E0E0]  rounded-xl p-3 md:p-6">
         <ZoomIn className="rounded-2xl">
           <Image
             src={
@@ -20,12 +20,12 @@ const ProjectDetails = ({ singleData }) => {
             width={900} // real image width in px
             height={600} // real image height in px
             quality={90} // good balance of quality and size
-            className="object-cover w-full  h-[600px] rounded-2xl  "
+            className="object-cover w-full  md:h-[600px] rounded-2xl  "
           />
         </ZoomIn>
         <div className="mt-8">
           <div>
-            <h1 className="text-primary-muted text-3xl font-bold">
+            <h1 className="text-primary-muted md:text-3xl text-2xl font-bold">
               {project.project_title}
             </h1>
             <p className="mt-6 text-[20px] text-[#7C7C7C]">

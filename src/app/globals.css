@@ -85,3 +85,72 @@
   border-color: #00bfa6;
   box-shadow: 0 0 0 1px #00bfa6;
 }
+
+/* Top Gradient Line */
+.custom-gradient-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 594px;
+  height: 4px;
+  background: linear-gradient(85deg, rgba(255, 255, 255, 0) 0%, #2154ff 100%);
+  animation: moveLine 8s linear infinite;
+}
+
+/* Top Gradient Line - Static Version */
+.custom-gradient-line-top {
+  width: 594px;
+  height: 4px;
+  right: 0px;
+  bottom: 0px;
+  background: linear-gradient(85deg, #2154ff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Bottom Gradient Line */
+.bottom-gradient-line {
+  position: absolute;
+  width: 594px;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(85deg, #2154ff 0%, rgba(255, 255, 255, 0) 100%);
+  animation: moveBottomLine 8s linear infinite;
+}
+/* Vertical Scroll Animation */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Gradient Line Movement - Top */
+@keyframes moveLine {
+  0% {
+    transform: translateX(-594px);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* Gradient Line Movement - Bottom */
+@keyframes moveBottomLine {
+  100% {
+    transform: translateX(-594px);
+  }
+  0% {
+    transform: translateX(100vw);
+  }
+}
+
+/* globals.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

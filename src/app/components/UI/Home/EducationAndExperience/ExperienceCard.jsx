@@ -5,10 +5,10 @@ const ExperienceCard = ({ item }) => {
   return (
     <SlideRight delay={0.2}>
       <div className="mt-8">
-        <div className="group border-b border-gray-200 pb-8 cursor-pointer bg-white hover:bg-[#F5F7FA] transition-all ease-in-out duration-300 rounded-xl p-6">
-          <div className="flex space-x-6 items-start">
+        <div className="group border-b border-gray-200 pb-8 cursor-pointer bg-white hover:bg-[#F5F7FA] transition-all ease-in-out duration-300 rounded-xl md:p-6">
+          <div className="flex md:space-x-6 space-x-3 items-start">
             {/* Icon */}
-            <div className="bg-[#FCB1B1] p-4 rounded-full w-fit">
+            <div className="bg-[#FCB1B1] md:p-4 p-2 rounded-full w-fit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"

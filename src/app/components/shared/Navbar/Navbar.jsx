@@ -86,7 +86,7 @@ const Navbar = () => {
             <Link
               key={path}
               onClick={handleMenuLinkClick}
-              className={`text-[16px] font-normal hover:text-[#3F51B5] duration-300 ${
+              className={`text-[16px] font-medium hover:text-[#3F51B5] duration-300 ${
                 pathName === path
                   ? "font-semibold text-[#3F51B5]"
                   : "text-primary-base"

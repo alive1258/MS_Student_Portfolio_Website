@@ -3,19 +3,32 @@ import SlideUp from "@/app/components/common/animations/SlideUp";
 import Image from "next/image";
 import React from "react";
 
-const AcademiaAndIndustryCard = ({ item, idx, delay = 0 }) => {
+const ProfessorCard = ({ item, idx, delay = 0 }) => {
   return (
     <SlideUp delay={delay}>
       <div className="bg-[#F5F5F4] gap-6 border border-[#E0E0E0] hover:shadow-xl transition-all duration-300 ease-in-out  px-4 py-6  grid md:grid-cols-3 grid-cols-1 gap-x-5 md:gap-y-0 gap-y-4 rounded-2xl">
         {/* START IMAGE SECTION */}
         <div className={`${idx % 2 !== 0 ? "md:order-2" : "md:order-1"}`}>
           <div className="">
-            <Image
+            {/* <Image
               src={process?.env?.NEXT_PUBLIC_IMAGE_URL + item?.photo}
               alt={item?.title}
               width={400}
               height={530}
-              className="md:h-[530px] h-[350px] w-full"
+              className="max-h-[400px] h-full rounded-xl"
+            /> */}
+            <Image
+              src={
+                item?.photo?.startsWith("http")
+                  ? item?.photo
+                  : `${process.env.NEXT_PUBLIC_IMAGE_URL || ""}${
+                      item?.photo || ""
+                    }`
+              }
+              alt={item?.title || "Professor"}
+              width={400}
+              height={530}
+              className="md:h-[400px] w-full h-full rounded-xl"
             />
           </div>
         </div>
@@ -30,8 +43,8 @@ const AcademiaAndIndustryCard = ({ item, idx, delay = 0 }) => {
         >
           {/* <div className="col-span-2"> */}
           <div>
-            <h1 className="text-primary-muted md:text-3xl text-2xl font-semibold">
-              {item?.faculty_name}
+            <h1 className="text-primary-muted text-xl font-semibold">
+              {item?.description}
             </h1>
             <div className="mt-6 space-y-3">
               <div className="flex  space-x-4">
@@ -59,7 +72,7 @@ const AcademiaAndIndustryCard = ({ item, idx, delay = 0 }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="text-lg text-[#464646]">{item?.duration}</p>
+                <p className="text-lg text-[#464646]">{item?.professor_name}</p>
               </div>
               <div className="flex  space-x-4">
                 <svg
@@ -86,7 +99,7 @@ const AcademiaAndIndustryCard = ({ item, idx, delay = 0 }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="text-lg text-[#464646]">{item?.position}</p>
+                <p className="text-lg text-[#464646]">{item?.department}</p>
               </div>
               <div className="flex  space-x-4">
                 <svg
@@ -115,17 +128,15 @@ const AcademiaAndIndustryCard = ({ item, idx, delay = 0 }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="text-lg text-[#464646]">{item?.institute_name}</p>
+                <p className="text-lg text-[#464646]">{item?.institute}</p>
               </div>
             </div>
-            <p className="mt-6 text-[20px] text-[#7C7C7C]">
-              {item?.description}
-            </p>
+
             <h4 className="mt-8 text-[#464646] text-xl font-semibold">
               {item?.title}
             </h4>
             <div className="mt-6 space-y-2">
-              {item?.skills?.map((skill, index) => (
+              {item?.research_subject_title?.map((skill, index) => (
                 <SlideRight key={index} delay={0.4 * index}>
                   <div className="flex  space-x-4">
                     <svg
@@ -167,4 +178,4 @@ const AcademiaAndIndustryCard = ({ item, idx, delay = 0 }) => {
   );
 };
 
-export default AcademiaAndIndustryCard;
+export default ProfessorCard;

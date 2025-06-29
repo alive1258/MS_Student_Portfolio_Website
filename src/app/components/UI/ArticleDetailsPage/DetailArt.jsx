@@ -4,7 +4,7 @@ import React from "react";
 const DetailArt = ({ detail }) => {
   return (
     <div>
-      <h2 className="text-xl nt-5 font-semibold">{detail?.title}</h2>
+      <h2 className="text-xl mt-5 font-semibold">{detail?.title}</h2>
       <p className="mt-2 text-gray-700">{detail?.description}</p>
 
       <div className="mt-6 space-y-4">

@@ -32,7 +32,7 @@ const ExtraTitle = () => {
 
       {/* Subheading */}
       <SlideUp>
-        <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
+        <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
           A glimpse into my academic engagements, leadership roles, research
           involvements, and community contributions that shaped my personal and
           professional growth.

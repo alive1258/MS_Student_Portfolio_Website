@@ -19,7 +19,7 @@ const DetailOfProject = async ({ projectId }) => {
     const projectDetails = detailsData?.data?.data;
 
     return (
-      <div className="p-4">
+      <div className="md:p-4">
         {projectDetails?.length > 0 ? (
           <ul className="list-disc pl-5 space-y-2">
             {projectDetails?.map((detail) => (

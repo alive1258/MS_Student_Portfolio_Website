@@ -37,7 +37,7 @@ const MyHobby = async () => {
               }}
             ></div>
           </div>
-          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
+          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
             I’m a PhD researcher and teaching assistant passionate about using
             cutting-edge technologies to solve real-world mechanical problems. I
             believe in bridging theory and practice through research,

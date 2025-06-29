@@ -45,9 +45,9 @@ const ResearchAndPublications = async () => {
           ></div>
         </SlideUp>
         <SlideUp>
-          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
-            Exploring cutting-edge solutions in CFD, AI, <br /> and Robotics
-            through rigorous academic inquiry.
+          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
+            Exploring cutting-edge solutions in CFD, AI, and Robotics through
+            rigorous academic inquiry.
           </p>
         </SlideUp>
         {/* all project  */}

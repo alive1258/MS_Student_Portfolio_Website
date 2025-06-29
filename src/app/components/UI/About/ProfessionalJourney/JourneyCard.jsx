@@ -24,7 +24,7 @@ const JourneyCard = ({ item }) => {
 
         {/* Right: Text Content */}
         <div>
-          <h1 className="text-primary-muted text-3xl font-semibold">
+          <h1 className="text-primary-muted md:text-3xl text-2xl font-semibold">
             {item?.title}
           </h1>
 

@@ -47,7 +47,7 @@ const Articles = async () => {
 
           {/* Description */}
           <SlideUp>
-            <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
+            <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
               Sharing thoughts, research experiences, and lessons learned <br />
               in the world of power electronics and renewable energy.
             </p>

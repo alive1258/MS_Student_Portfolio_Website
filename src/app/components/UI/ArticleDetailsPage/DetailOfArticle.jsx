@@ -19,7 +19,7 @@ const DetailOfArticle = async ({ articleId }) => {
     const articleDetails = detailsData?.data?.data;
 
     return (
-      <div className="p-4">
+      <div className="md:p-4">
         {articleDetails?.length > 0 ? (
           <ul className="list-disc pl-5 space-y-2">
             {articleDetails?.map((detail) => (
