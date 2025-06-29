@@ -1,5 +1,13 @@
 import SlideUp from "@/app/components/common/animations/SlideUp";
+import {
+  RiDribbbleLine,
+  RiFacebookFill,
+  RiInstagramLine,
+  RiLinkedinFill,
+  RiTwitterXLine,
+} from "@remixicon/react";
 import React from "react";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
@@ -271,142 +279,22 @@ const Contact = () => {
                 consectetur. Sagittis vitae et viverra vehicula arcu neque
                 euismod.{" "}
               </p>
-              <div className="mt-20 flex justify-center space-x-5">
-                {/* Icon wrapper */}
-                <div
-                  className="flex items-center justify-center w-14 h-14 aspect-square rounded-[99px]"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, #2B3957 0%, rgba(0, 0, 0, 0.00) 100%)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="33"
-                    height="32"
-                    viewBox="0 0 33 32"
-                    fill="none"
-                  >
-                    <g clipPath="url(#clip0_488_446)">
-                      <path
-                        d="M16.3334 2.66699C19.516 2.66699 22.5682 3.93127 24.8187 6.18171C27.0691 8.43215 28.3334 11.4844 28.3334 14.667C28.3334 18.7657 26.0987 22.1203 23.744 24.527C22.5674 25.7162 21.2838 26.7945 19.9094 27.7483L19.3414 28.135L19.0747 28.3123L18.572 28.6323L18.124 28.9057L17.5694 29.2283C17.1927 29.4427 16.7668 29.5554 16.3334 29.5554C15.9 29.5554 15.474 29.4427 15.0974 29.2283L14.5427 28.9057L13.8494 28.479L13.5934 28.3123L13.0467 27.9483C11.564 26.9448 10.1828 25.7989 8.92271 24.527C6.56804 22.119 4.33337 18.7657 4.33337 14.667C4.33337 11.4844 5.59766 8.43215 7.84809 6.18171C10.0985 3.93127 13.1508 2.66699 16.3334 2.66699ZM16.3334 10.667C15.8081 10.667 15.2879 10.7705 14.8026 10.9715C14.3173 11.1725 13.8764 11.4671 13.5049 11.8386C13.1335 12.21 12.8389 12.651 12.6379 13.1363C12.4368 13.6216 12.3334 14.1417 12.3334 14.667C12.3334 15.1923 12.4368 15.7124 12.6379 16.1977C12.8389 16.683 13.1335 17.124 13.5049 17.4954C13.8764 17.8669 14.3173 18.1615 14.8026 18.3625C15.2879 18.5635 15.8081 18.667 16.3334 18.667C17.3942 18.667 18.4117 18.2456 19.1618 17.4954C19.9119 16.7453 20.3334 15.7279 20.3334 14.667C20.3334 13.6061 19.9119 12.5887 19.1618 11.8386C18.4117 11.0884 17.3942 10.667 16.3334 10.667Z"
-                        fill="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_488_446">
-                        <rect
-                          width="32"
-                          height="32"
-                          fill="white"
-                          transform="translate(0.333374)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
+              <div className="mt-20 flex justify-center space-x-4">
+                <div className="footer-social-icon">
+                  <RiFacebookFill size={20} />
                 </div>
-                {/* Icon wrapper */}
-                <div
-                  className="flex items-center justify-center w-14 h-14 aspect-square rounded-[99px]"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, #2B3957 0%, rgba(0, 0, 0, 0.00) 100%)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="33"
-                    height="32"
-                    viewBox="0 0 33 32"
-                    fill="none"
-                  >
-                    <g clipPath="url(#clip0_488_446)">
-                      <path
-                        d="M16.3334 2.66699C19.516 2.66699 22.5682 3.93127 24.8187 6.18171C27.0691 8.43215 28.3334 11.4844 28.3334 14.667C28.3334 18.7657 26.0987 22.1203 23.744 24.527C22.5674 25.7162 21.2838 26.7945 19.9094 27.7483L19.3414 28.135L19.0747 28.3123L18.572 28.6323L18.124 28.9057L17.5694 29.2283C17.1927 29.4427 16.7668 29.5554 16.3334 29.5554C15.9 29.5554 15.474 29.4427 15.0974 29.2283L14.5427 28.9057L13.8494 28.479L13.5934 28.3123L13.0467 27.9483C11.564 26.9448 10.1828 25.7989 8.92271 24.527C6.56804 22.119 4.33337 18.7657 4.33337 14.667C4.33337 11.4844 5.59766 8.43215 7.84809 6.18171C10.0985 3.93127 13.1508 2.66699 16.3334 2.66699ZM16.3334 10.667C15.8081 10.667 15.2879 10.7705 14.8026 10.9715C14.3173 11.1725 13.8764 11.4671 13.5049 11.8386C13.1335 12.21 12.8389 12.651 12.6379 13.1363C12.4368 13.6216 12.3334 14.1417 12.3334 14.667C12.3334 15.1923 12.4368 15.7124 12.6379 16.1977C12.8389 16.683 13.1335 17.124 13.5049 17.4954C13.8764 17.8669 14.3173 18.1615 14.8026 18.3625C15.2879 18.5635 15.8081 18.667 16.3334 18.667C17.3942 18.667 18.4117 18.2456 19.1618 17.4954C19.9119 16.7453 20.3334 15.7279 20.3334 14.667C20.3334 13.6061 19.9119 12.5887 19.1618 11.8386C18.4117 11.0884 17.3942 10.667 16.3334 10.667Z"
-                        fill="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_488_446">
-                        <rect
-                          width="32"
-                          height="32"
-                          fill="white"
-                          transform="translate(0.333374)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
+
+                <div className="footer-social-icon">
+                  <RiInstagramLine size={20} />
                 </div>
-                {/* Icon wrapper */}
-                <div
-                  className="flex items-center justify-center w-14 h-14 aspect-square rounded-[99px]"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, #2B3957 0%, rgba(0, 0, 0, 0.00) 100%)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="33"
-                    height="32"
-                    viewBox="0 0 33 32"
-                    fill="none"
-                  >
-                    <g clipPath="url(#clip0_488_446)">
-                      <path
-                        d="M16.3334 2.66699C19.516 2.66699 22.5682 3.93127 24.8187 6.18171C27.0691 8.43215 28.3334 11.4844 28.3334 14.667C28.3334 18.7657 26.0987 22.1203 23.744 24.527C22.5674 25.7162 21.2838 26.7945 19.9094 27.7483L19.3414 28.135L19.0747 28.3123L18.572 28.6323L18.124 28.9057L17.5694 29.2283C17.1927 29.4427 16.7668 29.5554 16.3334 29.5554C15.9 29.5554 15.474 29.4427 15.0974 29.2283L14.5427 28.9057L13.8494 28.479L13.5934 28.3123L13.0467 27.9483C11.564 26.9448 10.1828 25.7989 8.92271 24.527C6.56804 22.119 4.33337 18.7657 4.33337 14.667C4.33337 11.4844 5.59766 8.43215 7.84809 6.18171C10.0985 3.93127 13.1508 2.66699 16.3334 2.66699ZM16.3334 10.667C15.8081 10.667 15.2879 10.7705 14.8026 10.9715C14.3173 11.1725 13.8764 11.4671 13.5049 11.8386C13.1335 12.21 12.8389 12.651 12.6379 13.1363C12.4368 13.6216 12.3334 14.1417 12.3334 14.667C12.3334 15.1923 12.4368 15.7124 12.6379 16.1977C12.8389 16.683 13.1335 17.124 13.5049 17.4954C13.8764 17.8669 14.3173 18.1615 14.8026 18.3625C15.2879 18.5635 15.8081 18.667 16.3334 18.667C17.3942 18.667 18.4117 18.2456 19.1618 17.4954C19.9119 16.7453 20.3334 15.7279 20.3334 14.667C20.3334 13.6061 19.9119 12.5887 19.1618 11.8386C18.4117 11.0884 17.3942 10.667 16.3334 10.667Z"
-                        fill="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_488_446">
-                        <rect
-                          width="32"
-                          height="32"
-                          fill="white"
-                          transform="translate(0.333374)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                <div className="footer-social-icon">
+                  <RiLinkedinFill size={20} />
                 </div>
-                {/* Icon wrapper */}
-                <div
-                  className="flex items-center justify-center w-14 h-14 aspect-square rounded-[99px]"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, #2B3957 0%, rgba(0, 0, 0, 0.00) 100%)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="33"
-                    height="32"
-                    viewBox="0 0 33 32"
-                    fill="none"
-                  >
-                    <g clipPath="url(#clip0_488_446)">
-                      <path
-                        d="M16.3334 2.66699C19.516 2.66699 22.5682 3.93127 24.8187 6.18171C27.0691 8.43215 28.3334 11.4844 28.3334 14.667C28.3334 18.7657 26.0987 22.1203 23.744 24.527C22.5674 25.7162 21.2838 26.7945 19.9094 27.7483L19.3414 28.135L19.0747 28.3123L18.572 28.6323L18.124 28.9057L17.5694 29.2283C17.1927 29.4427 16.7668 29.5554 16.3334 29.5554C15.9 29.5554 15.474 29.4427 15.0974 29.2283L14.5427 28.9057L13.8494 28.479L13.5934 28.3123L13.0467 27.9483C11.564 26.9448 10.1828 25.7989 8.92271 24.527C6.56804 22.119 4.33337 18.7657 4.33337 14.667C4.33337 11.4844 5.59766 8.43215 7.84809 6.18171C10.0985 3.93127 13.1508 2.66699 16.3334 2.66699ZM16.3334 10.667C15.8081 10.667 15.2879 10.7705 14.8026 10.9715C14.3173 11.1725 13.8764 11.4671 13.5049 11.8386C13.1335 12.21 12.8389 12.651 12.6379 13.1363C12.4368 13.6216 12.3334 14.1417 12.3334 14.667C12.3334 15.1923 12.4368 15.7124 12.6379 16.1977C12.8389 16.683 13.1335 17.124 13.5049 17.4954C13.8764 17.8669 14.3173 18.1615 14.8026 18.3625C15.2879 18.5635 15.8081 18.667 16.3334 18.667C17.3942 18.667 18.4117 18.2456 19.1618 17.4954C19.9119 16.7453 20.3334 15.7279 20.3334 14.667C20.3334 13.6061 19.9119 12.5887 19.1618 11.8386C18.4117 11.0884 17.3942 10.667 16.3334 10.667Z"
-                        fill="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_488_446">
-                        <rect
-                          width="32"
-                          height="32"
-                          fill="white"
-                          transform="translate(0.333374)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                <div className="footer-social-icon">
+                  <RiTwitterXLine size={20} />
+                </div>
+                <div className="footer-social-icon">
+                  <RiDribbbleLine size={20} />
                 </div>
               </div>
             </div>
@@ -430,67 +318,7 @@ const Contact = () => {
             />
 
             {/* Form */}
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium">
-                  Name
-                </label>
-                <input
-                  style={{
-                    background:
-                      "linear-gradient(54deg, rgba(199, 215, 245, 0.10) 1.02%, rgba(14, 26, 50, 0.10) 49.46%, rgba(210, 225, 255, 0.10) 97.89%)",
-                  }}
-                  type="text"
-                  id="name"
-                  className="mt-1 w-full px-4 py-2 rounded-lg  placeholder-white/60 text-white 
-      border border-white/20  transparent focus:outline-none focus:ring-1 focus:ring-[#00BFA6] focus:border-[#00BFA6]"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium">
-                  Email
-                </label>
-                <input
-                  style={{
-                    background:
-                      "linear-gradient(54deg, rgba(199, 215, 245, 0.10) 1.02%, rgba(14, 26, 50, 0.10) 49.46%, rgba(210, 225, 255, 0.10) 97.89%)",
-                  }}
-                  type="email"
-                  id="email"
-                  className="mt-1 w-full px-4 py-2 rounded-lg  placeholder-white/60 text-white 
-      border border-white/20  transparent focus:outline-none focus:ring-1 focus:ring-[#00BFA6] focus:border-[#00BFA6]"
-                  placeholder="you@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium">
-                  Message
-                </label>
-                <textarea
-                  style={{
-                    background:
-                      "linear-gradient(54deg, rgba(199, 215, 245, 0.10) 1.02%, rgba(14, 26, 50, 0.10) 49.46%, rgba(210, 225, 255, 0.10) 97.89%)",
-                  }}
-                  id="message"
-                  rows={4}
-                  placeholder="Type your message here..."
-                  className="mt-1 w-full px-4 py-2 rounded-lg  placeholder-white/60 text-white 
-      border border-white/20  transparent focus:outline-none focus:ring-1 focus:ring-[#00BFA6] focus:border-[#00BFA6]"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="mt-4 cursor-pointer flex justify-center items-center gap-2 px-6 py-3 text-white font-semibold rounded-[40px] 
-    border border-white/20 bg-white/10 shadow-[0px_0px_12px_0px_rgba(255,255,255,0.24)] 
-    transition-all duration-300 ease-in-out hover:bg-white/20"
-              >
-                Send Message
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>

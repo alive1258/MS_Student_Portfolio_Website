@@ -2,34 +2,67 @@
 export const cardData = [
   {
     id: 1,
-
     color: "#EAB308",
-    bgColor: "rgba(234, 179, 8, 0.10)",
+    bgColor: "linear-gradient(90deg, #EAB308 0%, #FDE68A 100%)",
     gradient: "from-transparent via-yellow-500 to-transparent",
     borderColor: "#EAB308",
   },
   {
     id: 2,
-
     color: "#F43F5E",
-    bgColor: "rgba(244, 63, 94, 0.10)",
+    bgColor: "linear-gradient(90deg, #F95555 0%, #6D53FF 100%)",
     gradient: "from-transparent via-rose-500 to-transparent",
     borderColor: "#F43F5E",
   },
   {
     id: 3,
-
     color: "#84CC16",
-    bgColor: "rgba(132, 204, 22, 0.10)",
+    bgColor: "linear-gradient(90deg, #84CC16 0%, #00E5FF 100%)",
     gradient: "from-transparent via-lime-500 to-transparent",
     borderColor: "#84CC16",
   },
   {
     id: 4,
-
     color: "#3B82F6",
-    bgColor: "rgba(59, 130, 246, 0.10)",
+    bgColor: "linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)",
     gradient: "from-transparent via-blue-500 to-transparent",
     borderColor: "#3B82F6",
+  },
+  {
+    id: 5,
+    color: "#A855F7",
+    bgColor: "linear-gradient(90deg, #0EA5E5 0%, #38BDF9 100%)",
+    gradient: "from-transparent via-sky-500 to-transparent",
+
+    borderColor: "#A855F7",
+  },
+  {
+    id: 6,
+    color: "#10B981",
+    color: "#F97316",
+    bgColor: "linear-gradient(90deg, #F97316 0%, #FDBA74 100%)",
+    gradient: "from-transparent via-orange-500 to-transparent",
+    borderColor: "#F97316",
+  },
+  {
+    id: 7,
+    color: "#EC4899",
+    bgColor: "linear-gradient(90deg, #EC4899 0%, #F9A8D4 100%)",
+    gradient: "from-transparent via-pink-500 to-transparent",
+    borderColor: "#EC4899",
+  },
+  {
+    id: 8,
+    color: "#F97316",
+    bgColor: "linear-gradient(90deg, #10B981 0%, #6EE7B7 100%)",
+    gradient: "from-transparent via-emerald-500 to-transparent",
+    borderColor: "#10B981",
+  },
+  {
+    id: 9,
+    color: "#0EA5E9",
+    bgColor: "linear-gradient(90deg, #A855F9 0%, #C088FC 100%)",
+    gradient: "from-transparent via-purple-500 to-transparent",
+    borderColor: "#0EA5E9",
   },
 ];

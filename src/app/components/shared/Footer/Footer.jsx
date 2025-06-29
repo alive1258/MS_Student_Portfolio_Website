@@ -1,5 +1,5 @@
 import React from "react";
-import Marquee from "react-fast-marquee";
+
 import {
   RiDribbbleLine,
   RiFacebookFill,
@@ -7,18 +7,17 @@ import {
   RiLinkedinFill,
   RiTwitterXLine,
 } from "@remixicon/react";
-import Image from "next/image";
 import Link from "next/link";
-import { services } from "@/utils/fakeData/serviceList";
-import FooterLinkSection from "./FooterLinkSection";
+
 import FooterQuickLink from "./FooterQuickLink";
+import FooterSkills from "./FooterSkills";
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer>
-      <div className="bg-[#6FC] py-4  uppercase">
-        {/* service 1  */}
+      {/* <div className="bg-[#6FC] py-4  uppercase">
+     
         <Marquee direction="left" pauseOnHover={true} speed={90}>
           {services?.map((service, index) => (
             <div key={index} className="mx-4 flex items-center space-x-3">
@@ -40,7 +39,8 @@ const Footer = () => {
             </div>
           ))}
         </Marquee>
-      </div>
+      </div> */}
+      <FooterSkills />
 
       {/* <!-- START FOOTER SECTION   --> */}
       <div className="bg-[#101828]">
@@ -71,6 +71,7 @@ const Footer = () => {
                   <div className="footer-social-icon">
                     <RiFacebookFill size={20} />
                   </div>
+
                   <div className="footer-social-icon">
                     <RiInstagramLine size={20} />
                   </div>

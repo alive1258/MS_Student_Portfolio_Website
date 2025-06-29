@@ -16,7 +16,7 @@ const ChooseCard = ({ card, delay = 0, index }) => {
         {/* Number Circle */}
         <div
           style={{
-            background: card.bgColor,
+            // background: card.bgColor,
             borderColor: card.borderColor,
           }}
           className="border rounded-full size-16 flex justify-center items-center"

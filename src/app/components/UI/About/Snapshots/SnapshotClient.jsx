@@ -6,7 +6,6 @@ import SnapshotCard from "./SnapshotCard";
 const SnapshotClient = ({ categories, defaultActivities }) => {
   const [selectedCategory, setSelectedCategory] = useState(""); // "" means 'All'
   const [activities, setActivities] = useState(defaultActivities);
-  console.log(activities, "activities");
 
   useEffect(() => {
     const fetchActivities = async () => {

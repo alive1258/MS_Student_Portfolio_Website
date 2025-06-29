@@ -13,11 +13,7 @@ const ResearchAndPublicationCard = ({ item, idx, delay = 0 }) => {
           <div className="relative overflow-hidden rounded-2xl">
             <Image
               className="w-full max-h-[410px] h-fit  object-cover rounded-2xl hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-              src={
-                process?.env?.NEXT_PUBLIC_IMAGE_URL +
-                item?.thumbnail +
-                `?v=${new Date().getTime()}`
-              }
+              src={process?.env?.NEXT_PUBLIC_IMAGE_URL + item?.thumbnail}
               alt={item?.title}
               height={384}
               width={500}

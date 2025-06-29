@@ -18,7 +18,7 @@ const ResearchAndPublications = async () => {
 
     const datas = await res.json();
     const researchAndPublicationsItem = datas?.data?.data;
-    // console.log(projectsItem, "projectsItem");
+
     return (
       <div className="container md:mt-32 mt-20">
         <SlideUp className="flex items-center justify-center space-x-4">

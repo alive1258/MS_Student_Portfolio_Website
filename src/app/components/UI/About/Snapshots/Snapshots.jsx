@@ -15,7 +15,7 @@ const Snapshots = async () => {
 
     const categoriesData = await res1.json();
     const defaultActivitiesData = await res2.json();
-    console.log(defaultActivitiesData?.data?.data, "defaultActivitiesData");
+
     return (
       <div>
         {/* Blurred Background Shape */}

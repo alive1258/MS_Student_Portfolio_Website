@@ -14,9 +14,9 @@ const Project = async () => {
 
     const datas = await res.json();
     const projectsItem = datas?.data?.data;
-    // console.log(projectsItem, "projectsItem");
+
     return (
-      <div className="bg-[#F5F7FA] md:mt-32 mt-20">
+      <div className="bg-[#F5F7FA] ">
         <div className="container py-24">
           <SlideUp className="flex items-center justify-center space-x-4">
             <div
@@ -53,7 +53,7 @@ const Project = async () => {
           <div className="mt-9 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             {projectsItem.length > 0 ? (
               projectsItem?.map((item, index) => (
-                <ProjectCard key={index} item={item} />
+                <ProjectCard key={index} item={item} delay={0.4 * index} />
               ))
             ) : (
               <div className="col-span-2 text-center text-gray-500 text-xl py-20">

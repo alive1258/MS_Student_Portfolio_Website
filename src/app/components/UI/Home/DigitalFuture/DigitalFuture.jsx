@@ -43,7 +43,8 @@ const DigitalFuture = () => {
                 <div className="md:text-[32px] text-2xl font-black">
                   <SlideUp>
                     <h1 className="text-[#FAFAFA] md:text-[32px] text-[28px] font-black">
-                      Work With Solvex – Let’s Build Your Digital Future!
+                      Collaborate with Sayem – Where Engineering Meets
+                      Innovation
                     </h1>
                   </SlideUp>
                 </div>
@@ -53,11 +54,13 @@ const DigitalFuture = () => {
               {/* === START PARAGRAPH TEXT === */}
               <SlideUp
                 delay={paragraphDelay}
-                className="mt-5  text-[16px] w-full max-w-[430px] mx-auto"
+                className="mt-5  text-[16px] w-full md:max-w-[580px] mx-auto"
               >
                 <p>
-                  "Your business deserves a winning digital solution. Let's
-                  collaborate and create something extraordinary.
+                  Advancing the field of Power Electronics through simulation,
+                  data-driven research, and real-world impact. Whether you're in
+                  academia or industry — let's collaborate and engineer
+                  something exceptional!
                 </p>
               </SlideUp>
               {/* === END PARAGRAPH TEXT === */}
@@ -68,7 +71,7 @@ const DigitalFuture = () => {
               >
                 <Link href="/contact">
                   <button className="flex space-x-2 group uppercase  text-[16px] cursor-pointer h-14 px-6 py-4 justify-center items-center gap-1 rounded-full hover:bg-[#131313] bg-[#fff] hover:text-[#fff] text-[#000] hover:opacity-90">
-                    <span>Free Consultation</span>
+                    <span>Discuss a Research Project</span>
                     <RiArrowRightUpLine
                       className="transform transition-all duration-300 ease-in-out group-hover:rotate-45"
                       size={24}

@@ -1,8 +1,8 @@
 import SlideUp from "@/app/components/common/animations/SlideUp";
 import ButtonOutline from "@/app/components/common/Button/ButtonOutline";
-import { projectDetailsData } from "@/utils/fakeData/projectDetailsData";
 import ArticleCard from "./ArticleCard";
 import Link from "next/link";
+import ArticleCardSkeleton from "@/app/components/common/ArticleCardSkeleton/ArticleCardSkeleton";
 
 const Articles = async () => {
   try {
@@ -11,15 +11,16 @@ const Articles = async () => {
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch hero data");
+      throw new Error("Failed to fetch article data");
     }
 
     const datas = await res.json();
-    const articlesItem = datas?.data?.data;
-    // console.log(articlesItem, "articlesItem");
+    const articlesItem = datas?.data?.data || [];
+
     return (
-      <div className=" md:my-32 my-20">
-        <div className="container ">
+      <div className="md:my-32 my-20">
+        <div className="container">
+          {/* Title Section */}
           <SlideUp className="flex items-center justify-center space-x-4">
             <div
               className="mt-1"
@@ -43,20 +44,20 @@ const Articles = async () => {
               }}
             ></div>
           </SlideUp>
+
+          {/* Description */}
           <SlideUp>
             <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-2xl">
-              Sharing thoughts, research experiences, and lessons learned <br />{" "}
+              Sharing thoughts, research experiences, and lessons learned <br />
               in the world of power electronics and renewable energy.
             </p>
           </SlideUp>
 
+          {/* Articles Grid */}
           <div className="mt-16 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
-            {/* {projectDetailsData?.map((item, index) => (
-            <ArticleCard key={index} item={item} />
-          ))} */}
             {articlesItem.length > 0 ? (
-              articlesItem?.map((item, index) => (
-                <ArticleCard key={index} item={item} />
+              articlesItem.map((item, index) => (
+                <ArticleCard key={index} item={item} delay={0.4 * index} />
               ))
             ) : (
               <div className="col-span-2 text-center text-gray-500 text-xl py-20">
@@ -65,6 +66,7 @@ const Articles = async () => {
             )}
           </div>
 
+          {/* View All Button */}
           <div className="mt-10 flex items-center justify-center">
             <Link href="/articles">
               <ButtonOutline content="View All Articles" />
@@ -74,10 +76,10 @@ const Articles = async () => {
       </div>
     );
   } catch (error) {
-    console.error("Hero section fetch failed:", error);
+    console.error("Articles fetch failed:", error);
     return (
       <div className="md:pt-36 pt-28 text-center text-red-500 text-lg py-20">
-        Oops! Something went wrong while loading the hero section.
+        Oops! Something went wrong while loading the articles section.
       </div>
     );
   }

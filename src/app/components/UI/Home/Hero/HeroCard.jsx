@@ -12,16 +12,16 @@ const HeroCard = ({ item }) => {
       {/* Left Section */}
       <div className="flex justify-center items-center">
         <div className="md:mt-6">
-          <p>{item?.subtitle}</p>
+          <p>{item?.name}</p>
 
           <h2 className="md:text-4xl text-primary-base text-2xl font-bold pt-4">
-            {item?.title || "MS Student &"}
+            {item?.class_name || "MS Student &"}
           </h2>
 
           <div className="pt-8 text-lg">
             <SlideLeft delay={0.4}>
               <h2 className="text-[#3479FD] md:text-4xl text-2xl font-bold">
-                {item?.highlight}
+                {item?.course_name}
               </h2>
               <p className="text-secondary-base md:text-lg text-base mt-8">
                 {item?.description}

@@ -54,9 +54,10 @@
   .add_section_title {
     @apply border-b text-lg text-[#b5b7c8] pb-5 border-[#26272F];
   }
+
   /* footer social icon  */
   .footer-social-icon {
-    @apply hover:text-[#000] size-12 duration-300 transition-all ease-in-out cursor-pointer hover:bg-[#6FC] hover:border-[#6FC] rounded-full flex justify-center items-center  bg-[#27272A] border border-[#3F3F46];
+    @apply flex items-center justify-center w-14 h-14 aspect-square rounded-full border border-white/10 bg-gradient-to-b from-[#2B3957] to-transparent hover:bg-[#66FFCC] hover:border-[#66FFCC] transition-all duration-300 cursor-pointer;
   }
 }
 
@@ -67,4 +68,20 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
+}
+.contact_forms {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact_forms::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact_forms:focus {
+  border-color: #00bfa6;
+  box-shadow: 0 0 0 1px #00bfa6;
 }

@@ -31,7 +31,7 @@ const EducationAndExperience = async () => {
     const educationItem = educationsData?.data?.data;
     const experienceItem = experiencesData?.data?.data;
     return (
-      <div className="container md:mt-32 mt-20">
+      <div className="container md:my-32 my-20">
         {/* title  */}
         <SlideUp className="flex items-center justify-center md:space-x-4 space-x-1">
           <div
