@@ -2,13 +2,27 @@ import SlideUp from "@/app/components/common/animations/SlideUp";
 import ButtonOutline from "@/app/components/common/Button/ButtonOutline";
 import ArticleCard from "./ArticleCard";
 import Link from "next/link";
-import ArticleCardSkeleton from "@/app/components/common/ArticleCardSkeleton/ArticleCardSkeleton";
 
 const Articles = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles`, {
       next: { revalidate: 30 },
     });
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/section-description`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch section-description data");
+    }
+    const sectionData = await response.json();
+
+    const sectionsItem = sectionData?.data?.data?.find(
+      (item) => item?.title === "Insights & Articles"
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch article data");
@@ -47,10 +61,11 @@ const Articles = async () => {
 
           {/* Description */}
           <SlideUp>
-            <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
-              Sharing thoughts, research experiences, and lessons learned <br />
-              in the world of power electronics and renewable energy.
-            </p>
+            {sectionsItem && (
+              <p className="mt-10 text-primary-base md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
+                {sectionsItem?.description}
+              </p>
+            )}
           </SlideUp>
 
           {/* Articles Grid */}

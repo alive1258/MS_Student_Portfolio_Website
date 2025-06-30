@@ -7,6 +7,20 @@ const Project = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`, {
       next: { revalidate: 30 },
     });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/section-description`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch section-description data");
+    }
+    const sectionData = await response.json();
+
+    const sectionsItem = sectionData?.data?.data?.find(
+      (item) => item?.title === "Featured Projects"
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch hero data");
@@ -44,12 +58,11 @@ const Project = async () => {
             ></div>
           </SlideUp>
           <SlideUp>
-            <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
-              I’m a PhD researcher and teaching assistant passionate about using
-              cutting-edge technologies to solve real-world mechanical problems.
-              I believe in bridging theory and practice through research,
-              simulation, and education.
-            </p>
+            {sectionsItem && (
+              <p className="mt-10 text-primary-base md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
+                {sectionsItem?.description}
+              </p>
+            )}
           </SlideUp>
 
           <div className="mt-9 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">

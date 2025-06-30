@@ -1,5 +1,6 @@
 import React from "react";
 import HobbyCard from "./HobbyCard";
+import SlideUp from "@/app/components/common/animations/SlideUp";
 
 const MyHobby = async () => {
   try {
@@ -7,10 +8,24 @@ const MyHobby = async () => {
       next: { revalidate: 30 },
     });
 
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/section-description`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch section-description data");
+    }
+    const sectionData = await response.json();
+
+    const sectionsItem = sectionData?.data?.data?.find(
+      (item) => item?.title === "My Hobby"
+    );
+
     if (!res.ok) {
       throw new Error("Failed to fetch hero data");
     }
-
     const datas = await res.json();
     const hobbyItems = datas?.data?.data;
     return (
@@ -37,12 +52,13 @@ const MyHobby = async () => {
               }}
             ></div>
           </div>
-          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
-            I’m a PhD researcher and teaching assistant passionate about using
-            cutting-edge technologies to solve real-world mechanical problems. I
-            believe in bridging theory and practice through research,
-            simulation, and education.
-          </p>
+          <SlideUp>
+            {sectionsItem && (
+              <p className="mt-10 text-primary-base md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
+                {sectionsItem?.description}
+              </p>
+            )}
+          </SlideUp>
           <div className="cursor-pointer mt-16 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             {hobbyItems?.map((item, index) => (
               <HobbyCard key={item?.id} item={item} delay={index * 0.4} />

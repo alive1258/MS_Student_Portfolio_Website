@@ -21,7 +21,7 @@ const AboutCard = ({ item }) => {
     <div>
       {/* Description */}
       <SlideUp>
-        <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
+        <p className="mt-10 text-primary-base md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
           {item.description}
         </p>
       </SlideUp>

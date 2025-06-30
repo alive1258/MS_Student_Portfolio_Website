@@ -7,7 +7,8 @@ import { HiMiniXMark, HiOutlineBars3BottomLeft } from "react-icons/hi2";
 import Button from "../../common/Button/Button";
 import { RiArrowUpLine } from "@remixicon/react";
 import { BsLinkedin } from "react-icons/bs";
-// import itcmLogo from "../../../../public/assets/images/logoITCM.jpg";
+import Image from "next/image";
+import { FaFacebookSquare } from "react-icons/fa";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -107,7 +108,7 @@ const Navbar = () => {
       {/* Social icons */}
       <div className="hidden  lg:flex fixed flex-col top-[35%] left-0">
         <ul>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#0077b5]">
+          <li className="w-[180px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#0077b5]">
             <a
               target="_new"
               className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
@@ -116,26 +117,67 @@ const Navbar = () => {
               Linkedin <BsLinkedin size={30} />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
+          <li className="w-[180px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#08D1B2]">
             <a
               target="_new"
-              className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
-              href="https://github.com/alive1258"
+              className="flex pl-4 pr-2 justify-between items-center w-full "
+              href="https://www.researchgate.net/profile/Md-Sayem-21"
             >
-              Github
+              <span className="text-[#fff]">Research Gate</span>
+              <Image
+                src="/assets/images/research_gate.png"
+                alt="research_gate"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#1877F2]">
+          <li className="w-[180px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#1E88E5]">
             <a
               target="_new"
-              className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
-              href="https://www.facebook.com/profile.php?id=100060866764137"
+              className="flex pl-4 pr-2 justify-between items-center w-full "
+              href="https://surli.cc/plkknf"
             >
-              Facebook
+              <span className="text-[#fff]">Google Scholar</span>
+              <Image
+                src="/assets/images/google_scholar.png"
+                alt="research_gate"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
             </a>
           </li>
           {/* bg-[#565f69] */}
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#E1306c] ">
+          <li className="w-[180px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#006699] ">
+            <a
+              target="_new"
+              className="flex pl-4 pr-2 justify-between items-center w-full "
+              href="https://surli.cc/zlpgpa"
+            >
+              <span className="text-[#fff]">IEEE</span>
+              <Image
+                src="/assets/images/IEEELogo.png"
+                alt="research_gate"
+                width={50}
+                height={60}
+                className="rounded-lg"
+              />
+            </a>
+          </li>
+          <li className="w-[180px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#1877F2]">
+            <a
+              target="_new"
+              className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
+              href="https://www.facebook.com/100009058770776/"
+            >
+              Facebook <FaFacebookSquare size={30} />
+            </a>
+          </li>
+
+          {/* bg-[#565f69] */}
+          {/* <li className="w-[180px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#E1306c] ">
             <a
               target="_new"
               className="flex pl-4 pr-2 justify-between items-center w-full text-gray-300"
@@ -143,7 +185,7 @@ const Navbar = () => {
             >
               Instagram
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
       {/* scroll Percent section    */}

@@ -16,6 +16,20 @@ const ExtraCurriculum = async () => {
         next: { revalidate: 30 },
       }
     );
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/section-description`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch section-description data");
+    }
+    const sectionData = await response.json();
+
+    const sectionsItem = sectionData?.data?.data?.find(
+      (item) => item?.title === "Extra Curriculum Activities"
+    );
 
     const categoriesData = await res1.json();
     const defaultActivitiesData = await res2.json();
@@ -43,7 +57,7 @@ const ExtraCurriculum = async () => {
         ></div>
 
         <div className="container md:mt-32 mt-20">
-          <ExtraTitle />
+          <ExtraTitle sectionsItem={sectionsItem} />
 
           {/* Interactive Client Component */}
           <ExtraCurriculumClient

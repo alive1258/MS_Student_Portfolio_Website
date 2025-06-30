@@ -20,6 +20,20 @@ const Skills = async () => {
         next: { revalidate: 30 },
       }
     );
+    const responses = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/section-description`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
+    if (!responses.ok) {
+      throw new Error("Failed to fetch section-description data");
+    }
+    const sectionData = await responses.json();
+
+    const sectionsItem = sectionData?.data?.data?.find(
+      (item) => item?.title === "Skills & Expertise"
+    );
 
     if (!response.ok) throw new Error("Failed to fetch categories data");
     if (!res.ok) throw new Error("Failed to fetch skills data");
@@ -81,11 +95,11 @@ const Skills = async () => {
             ></div>
           </SlideUp>
           <SlideUp>
-            <p className="mt-10 text-[#fff] text-center font-semibold md:text-3xl text-xl">
-              A snapshot of my core strengths in power electronics, simulations,{" "}
-              <br />
-              research, and technical problem-solving.
-            </p>
+            {sectionsItem && (
+              <p className="mt-10 text-[#fff] md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
+                {sectionsItem?.description}
+              </p>
+            )}
           </SlideUp>
           {/* Your background decorations and titles */}
           <div

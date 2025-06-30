@@ -59,6 +59,10 @@
   .footer-social-icon {
     @apply flex items-center justify-center w-14 h-14 aspect-square rounded-full border border-white/10 bg-gradient-to-b from-[#2B3957] to-transparent hover:bg-[#66FFCC] hover:border-[#66FFCC] transition-all duration-300 cursor-pointer;
   }
+  /* footer social icon  */
+  .footer-social-icon-name {
+    @apply -top-9 left-1/2 -translate-x-1/2 text-sm text-white bg-gradient-to-b from-[#2B3957] to-transparent px-2 py-1.5 rounded opacity-0 group-hover:opacity-100 transition;
+  }
 }
 
 /* About Us Section Background */

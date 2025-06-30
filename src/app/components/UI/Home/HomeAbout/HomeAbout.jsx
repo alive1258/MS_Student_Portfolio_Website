@@ -12,12 +12,13 @@ const HomeAbout = async () => {
     );
 
     if (!res.ok) {
-      throw new Error("Failed to fetch hero data");
+      throw new Error("Failed to fetch home-about-section data");
     }
 
     const datas = await res.json();
 
     const homeAboutItem = datas?.data?.data?.[0];
+
     return (
       <div className="container md:mt-32 mt-20">
         <SlideUp className="flex items-center justify-center space-x-4">

@@ -11,6 +11,20 @@ const ResearchAndPublications = async () => {
         next: { revalidate: 30 },
       }
     );
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/section-description`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch section-description data");
+    }
+    const sectionData = await response.json();
+
+    const sectionsItem = sectionData?.data?.data?.find(
+      (item) => item?.title === "Research & Publications"
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch researchAndPublicationsItem data");
@@ -45,10 +59,11 @@ const ResearchAndPublications = async () => {
           ></div>
         </SlideUp>
         <SlideUp>
-          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
-            Exploring cutting-edge solutions in CFD, AI, and Robotics through
-            rigorous academic inquiry.
-          </p>
+          {sectionsItem && (
+            <p className="mt-10 text-primary-base md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
+              {sectionsItem?.description}
+            </p>
+          )}
         </SlideUp>
         {/* all project  */}
         <div className="mt-16">

@@ -1,3 +1,4 @@
+import SlideUp from "@/app/components/common/animations/SlideUp";
 import SnapshotClient from "./SnapshotClient";
 
 const Snapshots = async () => {
@@ -12,6 +13,20 @@ const Snapshots = async () => {
     const res2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/snapshots`, {
       next: { revalidate: 30 },
     });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/section-description`,
+      {
+        next: { revalidate: 30 },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch section-description data");
+    }
+    const sectionData = await response.json();
+
+    const sectionsItem = sectionData?.data?.data?.find(
+      (item) => item?.title === "Snapshots of My World"
+    );
 
     const categoriesData = await res1.json();
     const defaultActivitiesData = await res2.json();
@@ -44,11 +59,13 @@ const Snapshots = async () => {
               }}
             ></div>
           </div>
-          <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
-            Beyond research and engineering, here’s a glimpse into the books
-            that shaped my thinking, movies that sparked my imagination, and
-            personal moments that made life richer.
-          </p>
+          <SlideUp>
+            {sectionsItem && (
+              <p className="mt-10 text-primary-base md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
+                {sectionsItem?.description}
+              </p>
+            )}
+          </SlideUp>
 
           <SnapshotClient
             categories={categoriesData?.data?.data || []}

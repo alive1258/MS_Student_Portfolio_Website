@@ -2,7 +2,7 @@
 import SlideUp from "@/app/components/common/animations/SlideUp";
 import React from "react";
 
-const ExtraTitle = () => {
+const ExtraTitle = ({ sectionsItem }) => {
   return (
     <div>
       {/* Section Heading */}
@@ -32,11 +32,11 @@ const ExtraTitle = () => {
 
       {/* Subheading */}
       <SlideUp>
-        <p className="mt-10 text-primary-base text-center font-semibold md:text-3xl text-xl">
-          A glimpse into my academic engagements, leadership roles, research
-          involvements, and community contributions that shaped my personal and
-          professional growth.
-        </p>
+        {sectionsItem && (
+          <p className="mt-10 text-primary-base md:w-3/4  mx-auto text-center font-semibold md:text-3xl text-xl">
+            {sectionsItem?.description}
+          </p>
+        )}
       </SlideUp>
     </div>
   );
